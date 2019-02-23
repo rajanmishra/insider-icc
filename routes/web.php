@@ -18,3 +18,4 @@
 Route::get('/', 'TeamController@index');
 Route::get('/fixture', 'FixtureController@index');
 Route::get('/standing', 'StandingController@index');
+Route::get('/play', 'PlayController@index');

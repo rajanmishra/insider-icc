@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2019 at 02:41 PM
+-- Generation Time: Feb 23, 2019 at 03:19 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -34,6 +34,9 @@ CREATE TABLE `teams` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `strength_score` int(11) NOT NULL,
   `flag_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `played` int(11) NOT NULL,
+  `win` int(11) NOT NULL,
+  `lost` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -42,15 +45,15 @@ CREATE TABLE `teams` (
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`id`, `name`, `description`, `strength_score`, `flag_image`, `created_at`, `updated_at`) VALUES
-(1, 'Australia', '', 3, '', NULL, NULL),
-(2, 'Bangladesh', '', 0, '', NULL, NULL),
-(3, 'England', '', 3, '', NULL, NULL),
-(4, 'India', '', 3, '', NULL, NULL),
-(5, 'New Zealand', '', 3, '', NULL, NULL),
-(6, 'Pakistan', '', 0, '', NULL, NULL),
-(7, 'South Africa', '', 2, '', NULL, NULL),
-(8, 'Sri lanka', '', 2, '', NULL, NULL);
+INSERT INTO `teams` (`id`, `name`, `description`, `strength_score`, `flag_image`, `played`, `win`, `lost`, `created_at`, `updated_at`) VALUES
+(1, 'Australia', '', 3, '', 0, 0, 0, NULL, NULL),
+(2, 'Bangladesh', '', 0, '', 0, 0, 0, NULL, NULL),
+(3, 'England', '', 3, '', 0, 0, 0, NULL, NULL),
+(4, 'India', '', 3, '', 0, 0, 0, NULL, NULL),
+(5, 'New Zealand', '', 3, '', 0, 0, 0, NULL, NULL),
+(6, 'Pakistan', '', 0, '', 0, 0, 0, NULL, NULL),
+(7, 'South Africa', '', 2, '', 0, 0, 0, NULL, NULL),
+(8, 'Sri lanka', '', 2, '', 0, 0, 0, NULL, NULL);
 
 --
 -- Indexes for dumped tables

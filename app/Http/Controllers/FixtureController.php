@@ -33,6 +33,10 @@ class FixtureController extends Controller
             while( $i <= $team_per_group ){
                 if(isset( $teams[$j])){
                 $teams_group[$group][] = $teams[$j];
+                DB::table('groups')->insert(
+                    ['group' => $group, 'team_id' => $teams[$j]->id, 'team_name' => $teams[$j]->name ]
+                );
+
                 }
                 $i++;
                 $j =  $j + count( $groups);
@@ -51,6 +55,11 @@ class FixtureController extends Controller
             for($i = 0; $i < count($group); $i++){
                for($j = $i + 1; $j < count($group); $j++){
                     $fixture[] = ["group" => $group_name,  "match_date" => $start_date_temp, "team1" => $group[$i], "team2" => $group[$j]  ];
+
+                    DB::table('fixtures')->insert(
+                             ['group' => $group_name, 'team_id' => $group[$i]->id."-".$group[$j]->id, 'team_name' => $group[$i]->name ." vs ". $group[$j]->name, 'match_date' => $start_date_temp ]
+                     ); 
+
                     $start_date_temp = date('d-m-Y', strtotime($start_date_temp. ' + 5 days'));
                }
            }

@@ -3,6 +3,7 @@
 @section('content')
 <div class="content">
     <h2>Fixture -- Tournament Starting from {{$start_date}}</h2>
+     <a href ="/play" class="btn btn-info"> PLAY a Round</a>
 
     @foreach($groups as $group_name => $group)
         <div class="icc-teams">

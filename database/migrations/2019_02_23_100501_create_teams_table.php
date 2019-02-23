@@ -19,6 +19,9 @@ class CreateTeamsTable extends Migration
             $table->text('description');
             $table->integer('strength_score');
             $table->string('flag_image');
+            $table->integer('played');
+            $table->integer('win');
+            $table->integer('lost');            
             $table->timestamps();
         });
     }
