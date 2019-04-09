@@ -1,4 +1,4 @@
-# insider-icc
+#icc
 
 
 1. GET A CLone of the repo.
